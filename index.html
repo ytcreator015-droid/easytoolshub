@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyTools Hub — Free Percentage & Age Calculators</title>
+  <meta name="description" content="Fast, simple, and mobile-friendly online tools: Percentage Calculator with real-life examples and an instant Age Calculator.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+          <line x1="12" y1="8" x2="12" y2="16"></line>
+        </svg>
+        <span>EasyTools<strong>Hub</strong></span>
+      </a>
+
+      <button id="menuToggle" class="menu-btn" aria-label="Toggle navigation menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#percentage-calc" class="nav-item">Percentage Calculator</a>
+        <a href="#age-calc" class="nav-item">Age Calculator</a>
+        <a href="#contact" class="nav-item">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-badge">100% Free • Fast • Accurate</div>
+        <h1 class="hero-title">Quick, Everyday Tools at Your Fingertips</h1>
+        <p class="hero-desc">
+          Calculate percentages, discounts, tips, and find your exact age down to days and hours. Designed to be fast, clear, and easy on your phone.
+        </p>
+        <div class="hero-actions">
+          <a href="#percentage-calc" class="btn btn-primary">Try Percentage Calc</a>
+          <a href="#age-calc" class="btn btn-secondary">Try Age Calc</a>
+        </div>
+
+        <div class="feature-strip">
+          <div class="feature-pill">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Instant Results</span>
+          </div>
+          <div class="feature-pill">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"></rect><line x1="12" y1="18" x2="12" y2="18.01"></line></svg>
+            <span>Mobile First</span>
+          </div>
+          <div class="feature-pill">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Offline Capable</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Percentage Calculator Section -->
+    <section id="percentage-calc" class="tool-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Tool #1</span>
+          <h2>Percentage Calculator</h2>
+          <p>Solve everyday percentage questions like discounts, markups, test scores, and changes instantly.</p>
+        </div>
+
+        <!-- Calculator Tabs -->
+        <div class="calc-card">
+          <div class="tabs-nav" role="tablist">
+            <button class="tab-btn active" data-tab="tab-p1">What is X% of Y?</button>
+            <button class="tab-btn" data-tab="tab-p2">X is what % of Y?</button>
+            <button class="tab-btn" data-tab="tab-p3">% Increase / Decrease</button>
+          </div>
+
+          <!-- Mode 1: What is X% of Y -->
+          <div id="tab-p1" class="tab-pane active">
+            <div class="input-grid">
+              <div class="form-group">
+                <label for="p1-percent">What is</label>
+                <div class="input-wrap">
+                  <input type="number" id="p1-percent" placeholder="e.g. 15" step="any" inputmode="decimal">
+                  <span class="unit">%</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="p1-total">of amount</label>
+                <div class="input-wrap">
+                  <input type="number" id="p1-total" placeholder="e.g. 250" step="any" inputmode="decimal">
+                  <span class="unit">Val</span>
+                </div>
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="btn btn-primary" id="btn-calc-p1">Calculate</button>
+              <button class="btn btn-ghost" id="btn-reset-p1">Reset</button>
+            </div>
+            <div class="result-box" id="result-p1" style="display:none;">
+              <span class="result-label">Result:</span>
+              <div class="result-value" id="val-p1">0</div>
+              <p class="result-steps" id="step-p1"></p>
+            </div>
+          </div>
+
+          <!-- Mode 2: X is what % of Y -->
+          <div id="tab-p2" class="tab-pane">
+            <div class="input-grid">
+              <div class="form-group">
+                <label for="p2-part">Value (X)</label>
+                <div class="input-wrap">
+                  <input type="number" id="p2-part" placeholder="e.g. 45" step="any" inputmode="decimal">
+                  <span class="unit">Part</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="p2-whole">is what % of Total (Y)</label>
+                <div class="input-wrap">
+                  <input type="number" id="p2-whole" placeholder="e.g. 60" step="any" inputmode="decimal">
+                  <span class="unit">Total</span>
+                </div>
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="btn btn-primary" id="btn-calc-p2">Calculate</button>
+              <button class="btn btn-ghost" id="btn-reset-p2">Reset</button>
+            </div>
+            <div class="result-box" id="result-p2" style="display:none;">
+              <span class="result-label">Result:</span>
+              <div class="result-value" id="val-p2">0%</div>
+              <p class="result-steps" id="step-p2"></p>
+            </div>
+          </div>
+
+          <!-- Mode 3: Increase / Decrease -->
+          <div id="tab-p3" class="tab-pane">
+            <div class="input-grid">
+              <div class="form-group">
+                <label for="p3-initial">Initial Value</label>
+                <div class="input-wrap">
+                  <input type="number" id="p3-initial" placeholder="e.g. 100" step="any" inputmode="decimal">
+                  <span class="unit">From</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="p3-final">Final Value</label>
+                <div class="input-wrap">
+                  <input type="number" id="p3-final" placeholder="e.g. 135" step="any" inputmode="decimal">
+                  <span class="unit">To</span>
+                </div>
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="btn btn-primary" id="btn-calc-p3">Calculate</button>
+              <button class="btn btn-ghost" id="btn-reset-p3">Reset</button>
+            </div>
+            <div class="result-box" id="result-p3" style="display:none;">
+              <span class="result-label">Percentage Change:</span>
+              <div class="result-value" id="val-p3">0%</div>
+              <p class="result-steps" id="step-p3"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- How-to Guide & Real Examples -->
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              How It Works & Formula
+            </h3>
+            <p>Percentage means "per one hundred". You can solve any percentage question with simple math:</p>
+            <ul class="clean-list">
+              <li><strong>Basic Percentage:</strong> <code>Formula = (X / 100) × Y</code></li>
+              <li><strong>Find Percentage Share:</strong> <code>Formula = (Part / Total) × 100</code></li>
+              <li><strong>% Difference / Change:</strong> <code>Formula = ((Final - Initial) / Initial) × 100</code></li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Real Life Examples
+            </h3>
+            <div class="example-item">
+              <div class="ex-title">Shopping Discount (20% Off)</div>
+              <p class="ex-body">A shirt costs $80. What is 20% off? 20% of 80 = <strong>$16 discount</strong>. You pay $64.</p>
+            </div>
+            <div class="example-item">
+              <div class="ex-title">Exam Marks Percentage</div>
+              <p class="ex-body">Scored 480 out of 600? (480 ÷ 600) × 100 = <strong>80% marks</strong>.</p>
+            </div>
+            <div class="example-item">
+              <div class="ex-title">Salary or Price Hike</div>
+              <p class="ex-body">Price went from $200 to $250? (50 ÷ 200) × 100 = <strong>25% increase</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Age Calculator Section -->
+    <section id="age-calc" class="tool-section alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Tool #2</span>
+          <h2>Age Calculator</h2>
+          <p>Find your precise age in years, months, and days, plus breakdown of total days, hours, and next birthday countdown.</p>
+        </div>
+
+        <div class="calc-card">
+          <div class="input-grid">
+            <div class="form-group">
+              <label for="birth-date">Date of Birth</label>
+              <input type="date" id="birth-date" class="date-input">
+            </div>
+            <div class="form-group">
+              <label for="target-date">Age as of Date (Today by default)</label>
+              <input type="date" id="target-date" class="date-input">
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="btn btn-primary" id="btn-calc-age">Calculate Exact Age</button>
+            <button class="btn btn-ghost" id="btn-today-age">Reset to Today</button>
+          </div>
+
+          <!-- Age Results Display -->
+          <div class="age-result-wrap" id="ageResultBox" style="display:none;">
+            <div class="main-age-banner">
+              <span class="banner-sub">Your exact age is</span>
+              <div class="banner-highlight" id="primaryAgeText">0 Years, 0 Months, 0 Days</div>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number" id="statMonths">0</span>
+                <span class="stat-label">Total Months</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" id="statWeeks">0</span>
+                <span class="stat-label">Total Weeks</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" id="statDays">0</span>
+                <span class="stat-label">Total Days</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" id="statHours">0</span>
+                <span class="stat-label">Total Hours</span>
+              </div>
+            </div>
+
+            <div class="extra-insights">
+              <div class="insight-row">
+                <span class="insight-label">Next Birthday in:</span>
+                <strong class="insight-value" id="nextBirthdayText">--</strong>
+              </div>
+              <div class="insight-row">
+                <span class="insight-label">Day of the Week Born:</span>
+                <strong class="insight-value" id="dayOfWeekBorn">--</strong>
+              </div>
+              <div class="insight-row">
+                <span class="insight-label">Zodiac Sign:</span>
+                <strong class="insight-value" id="zodiacSign">--</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Age Calculator Info -->
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              How Age is Calculated
+            </h3>
+            <p>Our age calculator uses real calendar arithmetic, correctly accounting for leap years, 28/30/31-day months, and time elapsed. It provides both human-readable (years, months, days) and metric totals (total hours, total days) so you get accurate figures for official forms, insurance, or personal curiosity.</p>
+          </div>
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              Common Use Cases
+            </h3>
+            <ul class="clean-list">
+              <li><strong>Government & Job Forms:</strong> Fill out exact age requirements (e.g. 21 years, 4 months on cutoff date).</li>
+              <li><strong>Milestone Celebrations:</strong> Know when you will complete 10,000 days or your next half-birthday.</li>
+              <li><strong>Child Growth Tracking:</strong> Track baby milestones in precise weeks and months.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="tool-section">
+      <div class="container contact-container">
+        <div class="section-header">
+          <span class="badge">Feedback & Support</span>
+          <h2>Contact Us</h2>
+          <p>Have a suggestion, found a bug, or want a new calculator added? Drop a message below.</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-meta">
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div>
+                <span class="meta-label">Official Email</span>
+                <!-- Placeholder email as requested: User will provide Gmail later -->
+                <span class="meta-value" id="contactEmailPlaceholder">support@easytoolshub.com</span>
+                <span class="placeholder-note">(Custom support inbox coming soon)</span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <div>
+                <span class="meta-label">Response Time</span>
+                <span class="meta-value">Within 24 Hours</span>
+              </div>
+            </div>
+          </div>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" placeholder="e.g. Alex Sharma" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Your Email</label>
+              <input type="email" id="contact-email" placeholder="e.g. alex@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-tool">Topic / Calculator</label>
+              <select id="contact-tool">
+                <option value="percentage">Percentage Calculator</option>
+                <option value="age">Age Calculator</option>
+                <option value="suggestion">Suggest a New Tool</option>
+                <option value="other">General Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Your Message</label>
+              <textarea id="contact-message" rows="4" placeholder="Tell us how we can help or what tool you need..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            <div id="contactStatus" class="contact-status" style="display:none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span>EasyTools<strong>Hub</strong></span>
+        </a>
+        <p>Simple, reliable, and accessible everyday calculation tools built for everyone.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <a href="#percentage-calc">Percentage Calculator</a>
+          <a href="#age-calc">Age Calculator</a>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#home">Home</a>
+          <a href="#contact">Contact Support</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="currentYear"></span> EasyToolsHub. All rights reserved. Free for everyone.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
